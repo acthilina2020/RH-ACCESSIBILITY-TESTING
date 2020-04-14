@@ -243,7 +243,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Property Hub Page #16",
+    name: "Rocket Homes - Property Hob Page #16",
     url: "https://qa.rockethomes.com/how-much-is-my-home-worth",
     testOptions: {
       actions: ["wait for element #property-search-input to be visible"],
@@ -256,7 +256,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Terms Of Use Page #17",
+    name: "Rocket Homes - Property Report Page #16",
     url: "https://qa.rockethomes.com/property-report?street_address=1310%20E%20Giddens%20Ave&city=Tampa&state_code=FL&zip=33603",
     testOptions: {
       actions: [
@@ -287,7 +287,7 @@ async function runTest(test) {
   });
 
   results.screenGrab = test.name + '.png';
-
+anonymousUser
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
