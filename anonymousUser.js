@@ -266,7 +266,7 @@ const tests = [
         "wait for element #property-report-comparable-homes-toggle-sold to be visible",
         "wait for element #median-sold-compact-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
         "wait for element #homes-sold-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
-        "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible",
+        "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -286,8 +286,7 @@ async function runTest(test) {
     return console.error(error.message);
   });
 
-  results.screenGrab = test.name + '.png';
-anonymousUser
+  //results.screenGrab = test.name + '.png';
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
