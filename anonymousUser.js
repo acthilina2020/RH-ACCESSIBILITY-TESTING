@@ -243,7 +243,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Property Hob Page #16",
+    name: "Rocket Homes - Property Hub Page #16",
     url: "https://qa.rockethomes.com/how-much-is-my-home-worth",
     testOptions: {
       actions: ["wait for element #property-search-input to be visible"],
@@ -260,15 +260,14 @@ const tests = [
     url: "https://qa.rockethomes.com/property-report?street_address=1310%20E%20Giddens%20Ave&city=Tampa&state_code=FL&zip=33603",
     testOptions: {
       actions: [
-        "wait for element #property-report-aside-first-name-input to be visible",
-        "wait for element #home-valuation-estimated-home-value > div.flex.flex-col.border-2.rounded-8.items-center.p-16.pt-32.mt-24 > p to be visible",
-        "wait for element #comparable-homes-price-range > div > div:nth-child(2) > span to be visible",
-        "wait for element #property-report-comparable-homes-toggle-sold to be visible",
-        "wait for element #median-sold-compact-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
-        "wait for element #homes-sold-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
-        "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
-      ],
-      timeout: 60000,
+      "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #comparable-homes-summary > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #property-report-comparable-homes-toggle-sold to be visible",
+      "wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #property-report-main-content > section:nth-child(6) > h2 to be visible",
+      "wait for element #property-report-blog-links > div.flex.justify-between.items-center.mb-16 > h2 to be visible",
+      "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
+    ],
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -277,6 +276,7 @@ const tests = [
       }
     }
   }
+
 ];
 
 async function runTest(test) {
