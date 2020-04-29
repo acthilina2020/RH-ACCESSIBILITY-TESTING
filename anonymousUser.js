@@ -67,10 +67,9 @@ const tests = [
   },
   {
     name: "Rocket Homes - Buy Page #5",
-    url: "https://qa.rockethomes.com",
+    url: "https://qa.rockethomes.com/buy",
     testOptions: {
       actions: [
-        "click element #header-nav-buy",
         "wait for path to be /buy",
         "wait for #buy-page-agent-guide-section to be visible"
       ],
@@ -85,12 +84,11 @@ const tests = [
   },
   {
     name: "Rocket Homes - Sell Page #6",
-    url: "https://qa.rockethomes.com",
+    url: "https://qa.rockethomes.com/sell",
     testOptions: {
       actions: [
-        'click element [href="/sell"]',
         "wait for path to be /sell",
-        "wait for #sell-page-agent-guide-section > .h3 to be visible"
+        "wait for #sell-page > div to be visible"
       ],
       ignore: ["warning", "notice"],
       log: {
@@ -243,7 +241,42 @@ const tests = [
         info: console.error.bind(console)
       }
     }
+  },
+  {
+    name: "Rocket Homes - Property Hub Page #16",
+    url: "https://qa.rockethomes.com/how-much-is-my-home-worth",
+    testOptions: {
+      actions: ["wait for element #property-search-input to be visible"],
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Property Report Page #17",
+    url: "https://qa.rockethomes.com/property-report?street_address=1310%20E%20Giddens%20Ave&city=Tampa&state_code=FL&zip=33603",
+    testOptions: {
+      actions: [
+      "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #comparable-homes-summary > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #property-report-comparable-homes-toggle-sold to be visible",
+      "wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #property-report-main-content > section:nth-child(6) > h2 to be visible",
+      "wait for element #property-report-blog-links > div.flex.justify-between.items-center.mb-16 > h2 to be visible",
+      "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
+    ],
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
   }
+
 ];
 
 async function runTest(test) {
@@ -254,7 +287,6 @@ async function runTest(test) {
   });
 
   //results.screenGrab = test.name + '.png';
-
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
