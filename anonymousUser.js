@@ -54,7 +54,7 @@ const tests = [
       actions: [
         "click element #header-nav-mortgage",
         "wait for path to be /mortgage",
-        "wait for element #mortgage-cta-lets-begin to be visible"
+        "wait for element #mortgage-cta-hero to be visible"
       ],
       timeout: 80000,
       ignore: ["warning", "notice"],
@@ -268,6 +268,23 @@ const tests = [
       "wait for element #property-report-blog-links > div.flex.justify-between.items-center.mb-16 > h2 to be visible",
       "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
     ],
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Homes For Sale #18",
+    url: "https://qa.rockethomes.com/houses-for-sale",
+    testOptions: {
+      actions: [
+        "wait for path to be /houses-for-sale",
+        "wait for #housesforsale-searchbar to be visible"
+      ],
+      timeout: 70000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
