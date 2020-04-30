@@ -278,7 +278,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Homes For Sale #18",
-    url: "https://www.rockethomes.com/houses-for-sale",
+    url: "https://qa.rockethomes.com/houses-for-sale",
     testOptions: {
       actions: [
         "wait for path to be /houses-for-sale",
