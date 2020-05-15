@@ -19,7 +19,6 @@ const tests = [
         "set field #password to Sami1234",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for url to be https://qa.rockethomes.com/",
         "wait for element #header-nav-account-toggle to be visible",
         "click element #header-nav-account-toggle",
         "wait for element #header-nav-dropdown-notifications to be visible",
@@ -104,7 +103,7 @@ const tests = [
         "click element #sign-in-submit > button",
         "wait for url to be https://qa.rockethomes.com/real-estate-trends/mi/troy",
         "wait for element #trends-main-content > section:nth-child(1) > h2 to be visible",
-        "wait for element #trends-hero-breadcrumb-county to be visible"
+        "wait for element #trends-sticky-header-breadcrumb-county to be visible"
         
       ],
       ignore: ["warning", "notice"],
@@ -133,7 +132,7 @@ const tests = [
         "navigate to https://qa.rockethomes.com/property-report?street_address=1310%20E%20Giddens%20Ave&city=Tampa&state_code=FL&zip=33603",
         "wait for element #property-report-aside-first-name-input to be visible",
         // Verify Your Home's Estimate - Section
-        "wait for element #home-valuation-estimated-home-value > div.flex.flex-col.border-2.rounded-8.items-center.p-16.pt-32.mt-24 > p to be visible",
+        "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
         // Verify Summary of Comparable Homes Sold Recently - Section
         "wait for element #comparable-homes-price-range > div > div:nth-child(2) > span to be visible",
         // Verify Comparable Homes - Section
