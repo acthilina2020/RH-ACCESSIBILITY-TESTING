@@ -10,7 +10,7 @@ const tests = [
     name: "Rocket Homes - Home Page #1",
     url: "https://qa.rockethomes.com",
     testOptions: {
-      actions: [],
+      actions: ["wait for element #header-nav-sign-up to be visible"],
       timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
@@ -59,7 +59,7 @@ const tests = [
       timeout: 80000,
       ignore: ["warning", "notice"],
       log: {
-        error: console.error.bind(console),
+        error: console.error.bind(console), 
         debug: console.error.bind(console),
         info: console.error.bind(console)
       }
