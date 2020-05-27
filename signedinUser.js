@@ -20,9 +20,9 @@ const tests = [
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
         "wait for element #header-nav-account-toggle to be visible",
-        "click element #header-nav-account-toggle",
-        "wait for element #header-nav-dropdown-notifications to be visible",
-        "click element #header-nav-dropdown-notifications",
+        // "click element #header-nav-account-toggle",
+        // "wait for element #header-nav-dropdown-notifications to be visible",
+        // "click element #header-nav-dropdown-notifications",
         "navigate to https://qa.rockethomes.com/notifications",
         "wait for element #footer-container > footer > div.app-footer__nav.container > div.app-footer__foc-links-container > section > nav > a:nth-child(4) > img to be visible"
       ],
