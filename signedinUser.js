@@ -23,7 +23,7 @@ const tests = [
         "click element #header-nav-account-toggle",
         "wait for element #header-nav-dropdown-notifications to be visible",
         "click element #header-nav-dropdown-notifications",
-        "wait for path to be /notifications",
+        "navigate to https://qa.rockethomes.com/notifications",
         "wait for element #footer-container > footer > div.app-footer__nav.container > div.app-footer__foc-links-container > section > nav > a:nth-child(4) > img to be visible"
       ],
       ignore: ["warning", "notice"],
