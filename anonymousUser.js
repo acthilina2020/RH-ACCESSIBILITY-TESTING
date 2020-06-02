@@ -292,8 +292,27 @@ const tests = [
         info: console.error.bind(console)
       }
     }
+  },
+  {
+    name: "Rocket Homes - Off-Market Page #19",
+    url: "https://qa.rockethomes.com/homes/1082-sunset-rd-epworth-ga-30541",
+    testOptions: {
+      actions: [
+        "wait for element #listing-address > div > div.dFlex.alignItemsCenter.marginB24.bgRocketBlue4.b1.bRocketBlue0.border-radius-4.paddingX16.paddingY8.paddingX24-sm.paddingY16-sm.box-shadow-1 > p to be visible",
+        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > div to be visible",
+        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > h1 to be visible",
+        "wait for element #listing-form-contact-container > div.col-2-item.flex.justify-center > div > div:nth-child(1) > div to be visible",
+        "wait for element #app > div > div > div.listing-page-content > div.container > div > div:nth-child(5) > section > h3 to be visible"
+    ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
   }
-
 ];
 
 async function runTest(test) {
