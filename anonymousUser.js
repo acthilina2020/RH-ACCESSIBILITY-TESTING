@@ -316,7 +316,7 @@ const tests = [
 ];
 
 async function runTest(test) {
-  test.testOptions.screenCapture = "./Output/anonymousUser/" + test.name + ".png";
+  test.testOptions.screenCapture = "./Output/" + test.name + ".png";
   test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
@@ -324,7 +324,7 @@ async function runTest(test) {
 
   //results.screenGrab = test.name + '.png';
   const htmlResults = await htmlReporter.results(results);
-  fs.writeFile("Output/anonymousUser/" + test.name + ".html", htmlResults, function(err) {
+  fs.writeFile("Output/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }

@@ -157,14 +157,14 @@ const tests = [
 ];
 
 async function runTest(test) {
-  test.testOptions.screenCapture = "./Output/signedinUser/" + test.name + ".png";
+  test.testOptions.screenCapture = "./Output/" + test.name + ".png";
   test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
 
   const htmlResults = await htmlReporter.results(results);
-  fs.writeFile("Output/signedinUser/" + test.name + ".html", htmlResults, function(err) {
+  fs.writeFile("Output/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }
