@@ -21,7 +21,8 @@ const tests = [
         "click element #sign-in-submit > button",
         "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/notifications",
-        "wait for element #footer-container > footer > div.app-footer__nav.container > div.app-footer__foc-links-container > section > nav > a:nth-child(4) > img to be visible"
+        "wait for element #email-notifications > h1 to be visible",
+        "wait for element #footer-foc-links to be visible"
       ],
       ignore: ["warning", "notice"],
       log: {
@@ -131,7 +132,7 @@ const tests = [
         // Verify Your Home's Estimate - Section
         "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
         // Verify Summary of Comparable Homes Sold Recently - Section
-        "wait for element #comparable-homes-price-range > div > div:nth-child(2) > span to be visible",
+        "wait for element #property-report-comparable-homes > h3 to be visible",
         // Verify Comparable Homes - Section
         "wait for element #property-report-comparable-homes-toggle-sold to be visible",
         "wait for element #property-report-comparable-homes-carousel > div to be visible",

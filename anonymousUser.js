@@ -261,7 +261,7 @@ const tests = [
     testOptions: {
       actions: [
       "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
-      "wait for element #comparable-homes-summary > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #property-report-comparable-homes > h3 to be visible",
       "wait for element #property-report-comparable-homes-toggle-sold to be visible",
       "wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
       "wait for element #property-report-main-content > section:nth-child(6) > h2 to be visible",
