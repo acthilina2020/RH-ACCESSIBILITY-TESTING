@@ -37,7 +37,7 @@ const tests = [
     name: "Rocket Homes - Location Page #3",
     url: "https://qa.rockethomes.com/mi/detroit",
     testOptions: {
-      actions: ["wait for element #location-list-sort to be visible"],
+      actions: ["wait for element #location-title to be visible"],
       timeout: 60000,
       ignore: ["notice", "warning"],
       log: {
