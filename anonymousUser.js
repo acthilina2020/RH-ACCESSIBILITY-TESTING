@@ -22,9 +22,9 @@ const tests = [
   },
   {
     name: "Rocket Homes - Listing Page #2",
-    url: "https://qa.rockethomes.com/homes/46-yale-pl-buffalo-ny-14210",
+    url: "https://qa.rockethomes.com/homes/219-brannan-st-unit-2g-san-francisco-ca-94107",
     testOptions: {
-      actions: ["wait for element #listing-cta-button to be visible"],
+      actions: ["wait for element #side-nav-listing-form-first-name-input to be visible"],
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
