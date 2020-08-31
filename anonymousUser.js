@@ -49,7 +49,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Mortgage Page #4",
-    url: "https://qa.rockethomes.com",
+    url: "https://qa.rockethomes.com/mortgage",
     testOptions: {
       actions: [
         "click element #header-nav-mortgage",
