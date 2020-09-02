@@ -52,9 +52,8 @@ const tests = [
     url: "https://qa.rockethomes.com/mortgage",
     testOptions: {
       actions: [
-        "click element #header-nav-mortgage",
-        "wait for path to be /mortgage",
-        "wait for element #mortgage-cta-hero to be visible"
+        "wait for element #mortgage-cta-hero to be visible",
+        "wait for path to be /mortgage"
       ],
       timeout: 80000,
       ignore: ["warning", "notice"],
