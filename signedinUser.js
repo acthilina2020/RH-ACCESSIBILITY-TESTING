@@ -7,7 +7,7 @@ const fs = require("file-system");
 
 const tests = [
   {
-    name: "Rocket Homes - Email Notification Page #1",
+    name: "Rocket Homes - Email Notification Page 1",
     url: "https://qa.rockethomes.com",
     testOptions: {
       actions: [
@@ -24,6 +24,7 @@ const tests = [
         "wait for element #email-notifications > h1 to be visible",
         "wait for element #footer-foc-links to be visible"
       ],
+      timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -33,7 +34,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - My Faves Landing Page #2",
+    name: "Rocket Homes - My Faves Landing Page 2",
     url: "https://qa.rockethomes.com",
     testOptions: {
       actions: [
@@ -51,6 +52,7 @@ const tests = [
         "wait for path to be /faves",
         "wait for element #my-faves-page > h1 to be visible"
       ],
+      timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -60,7 +62,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - My Searches Landing Page #3",
+    name: "Rocket Homes - My Searches Landing Page 3",
     url: "https://qa.rockethomes.com",
     testOptions: {
       actions: [
@@ -78,6 +80,7 @@ const tests = [
         "wait for path to be /searches",
         "wait for element #my-searches-page > h1 to be visible"
       ],
+      timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -87,7 +90,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Trend Page Signed In #4",
+    name: "Rocket Homes - Trend Page Signed In 4",
     url: "https://qa.rockethomes.com/real-estate-trends/mi/troy",
     testOptions: {
       actions: [
@@ -104,6 +107,7 @@ const tests = [
         "wait for element #trends-sticky-header-breadcrumb-county to be visible"
         
       ],
+      timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -113,7 +117,7 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Property Report Page #5",
+    name: "Rocket Homes - Property Report Page 5",
     url: "https://qa.rockethomes.com/how-much-is-my-home-worth",
     testOptions: {  
       actions: [
@@ -147,6 +151,223 @@ const tests = [
         // Verify MLS Disclaimers and Copyright
         "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
       ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Credit Landing page 6",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/credit-score",
+        "wait for url to be https://qa.rockethomes.com/credit-score",
+        "wait for element #credit-score-hero-card > div > div > a to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - My Credit Score page 7",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit",
+        "wait for url to be https://qa.rockethomes.com/my-credit",
+        "wait for element #my-credit > h1 to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Payment History page 8",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/payment-history/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/payment-history/",
+        "wait for element #payment-history-details to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Credit Usage page 9",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/credit-usage/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/credit-usage/",
+        "wait for element #my-credit-factor-main-content to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Age of Credit page 10",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/age-of-credit/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/age-of-credit/",
+        "wait for element #age-of-credit to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Total Accounts page 11",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/total-accounts/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/total-accounts/",
+        "wait for element #total-accounts to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Hard Inquiries page 12",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/hard-inquiries/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/hard-inquiries/",
+        "wait for element #hard-inquiries to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Negative Marks page 13",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser@example.com",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #homepage-searchbar to be visible",
+        "navigate to https://qa.rockethomes.com/my-credit/negative-marks/",
+        "wait for url to be https://qa.rockethomes.com/my-credit/negative-marks/",
+        "wait for element #negative-marks to be visible"
+      ],
+      timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
