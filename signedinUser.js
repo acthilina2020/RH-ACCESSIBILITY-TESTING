@@ -173,7 +173,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/credit-score",
         "wait for url to be https://qa.rockethomes.com/credit-score",
         "wait for element #credit-score-hero-card > div > div > a to be visible"
@@ -200,7 +200,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit",
         "wait for url to be https://qa.rockethomes.com/my-credit",
         "wait for element #my-credit > h1 to be visible"
@@ -227,7 +227,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/payment-history/",
         "wait for url to be https://qa.rockethomes.com/my-credit/payment-history/",
         "wait for element #payment-history-details to be visible"
@@ -254,7 +254,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/credit-usage/",
         "wait for url to be https://qa.rockethomes.com/my-credit/credit-usage/",
         "wait for element #my-credit-factor-main-content to be visible"
@@ -281,7 +281,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/age-of-credit/",
         "wait for url to be https://qa.rockethomes.com/my-credit/age-of-credit/",
         "wait for element #age-of-credit to be visible"
@@ -308,7 +308,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/total-accounts/",
         "wait for url to be https://qa.rockethomes.com/my-credit/total-accounts/",
         "wait for element #total-accounts to be visible"
@@ -335,7 +335,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/hard-inquiries/",
         "wait for url to be https://qa.rockethomes.com/my-credit/hard-inquiries/",
         "wait for element #hard-inquiries to be visible"
@@ -362,7 +362,7 @@ const tests = [
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
-        "wait for element #homepage-searchbar to be visible",
+        "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/my-credit/negative-marks/",
         "wait for url to be https://qa.rockethomes.com/my-credit/negative-marks/",
         "wait for element #negative-marks to be visible"
