@@ -13,7 +13,7 @@ const tests =[
         "wait for element #header-nav-sign-in to be visible",
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
-        // "wait for element #password to be visible",
+        "wait for element #password to be visible",
         "set field #username to tsit.vnge9rdx@mailosaur.io",
         "set field #password to Sami1234",
         "wait for element #sign-in-submit > button to be visible",
@@ -102,8 +102,8 @@ const tests =[
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
         "wait for url to be https://qa.rockethomes.com/real-estate-trends/mi/troy",
-        "wait for element #trends-main-content > section:nth-child(1) > h2 to be visible"
-        //"wait for element #trends-sticky-header-breadcrumb-county to be visible" 
+        "wait for element #trends-main-content > section:nth-child(1) > h2 to be visible",
+        "wait for element #trends-sticky-header-breadcrumb-county to be visible" 
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
