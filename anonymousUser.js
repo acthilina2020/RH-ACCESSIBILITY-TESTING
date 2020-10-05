@@ -24,7 +24,9 @@ const tests = [
     name: "Rocket Homes - Listing Page 2",
     url: "https://qa.rockethomes.com/homes/219-brannan-st-unit-2g-san-francisco-ca-94107",
     testOptions: {
-      actions: ["wait for element #side-nav-listing-form-first-name-input to be visible"],
+      actions: [
+        "wait for element #side-nav-listing-form-first-name-input to be visible"
+      ],
       timeout: 60000,
       ignore: ["warning", "notice"],
       log: {
@@ -71,7 +73,8 @@ const tests = [
     testOptions: {
       actions: [
         "wait for path to be /buy",
-        "wait for #buy-page-agent-guide-section to be visible"
+        "wait for #buy-page-agent-guide-section to be visible",
+        "wait for #buy-page-lead-form-buy-preapproved-input to be visible"
       ],
       timeout: 70000,
       ignore: ["warning", "notice"],
@@ -88,7 +91,8 @@ const tests = [
     testOptions: {
       actions: [
         "wait for path to be /sell",
-        "wait for #sell-page > div to be visible"
+        "wait for #sell-page > div to be visible",
+        "wait for #sell-page-lead-form-sell-address-input to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -310,7 +314,7 @@ const tests = [
         "wait for element #listing-form-contact-container > div.col-2-item.flex.justify-center > div > div:nth-child(1) > div to be visible",
         "wait for element #app > div > div > div.listing-page-content > div.container > div > div:nth-child(5) > section > h3 to be visible"
       ],
-      timeout: 60000,
+      timeout: 90000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -335,19 +339,55 @@ const tests = [
         info: console.error.bind(console)
       }
     }
+  },
+  {
+    name: "Rocket Homes - Active listing page 21",
+    url: "https://www.rockethomes.com/homes/400-nw-lakewood-blvd-lees-summit-mo-64064",
+    testOptions: {
+      actions: [
+        "wait for element #listing-address-street to be visible",
+        "wait for element #listing-utilities-section-list to be visible",
+        "wait for element #mortgage-calculator to be visible",
+        "wait for element #section-neighbors to be visible",
+        "wait for element #listing-form-lead-form-container to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },{
+    name: "Rocket Homes - Market Reports page 22",
+    url: "https://qa.rockethomes.com/real-estate-trends",
+    testOptions: {
+      actions: [
+        "wait for element #trend-hub-search-bar to be visible",
+        "wait for element #trend-hub-featured-locations to be visible",
+        "wait for element #trend-hub-faq to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
   }
 ];
 
 async function runTest(test) {
-  test.testOptions.screenCapture = "./Output/anonymousUser/" + test.name + ".png";
+  test.testOptions.screenCapture = "./Output/anonymousUser/WCAG2A/" + test.name + ".png";
   test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
 
-  //results.screenGrab = test.name + '.png';
   const htmlResults = await htmlReporter.results(results);
-  fs.writeFile("Output/anonymousUser/" + test.name + ".html", htmlResults, function(err) {
+  fs.writeFile("Output/anonymousUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }
