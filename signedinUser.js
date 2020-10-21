@@ -375,14 +375,14 @@ const tests =[
   }
 ];
 async function runTest(test) {
-  test.testOptions.screenCapture = "./Output/signedinUser/WCAG2A/" + test.name + ".png";
-  test.testOptions.standard = "WCAG2A";
+  test.testOptions.screenCapture = "./Output/signedinUser/WCAG2AA/" + test.name + ".png";
+  test.testOptions.standard = "WCAG2AA";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
 
   const htmlResults = await htmlReporter.results(results);
-  fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
+  fs.writeFile("Output/signedinUser/WCAG2AA/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
   if(test.name==='Rocket Homes - Email Notification Page 1'){
