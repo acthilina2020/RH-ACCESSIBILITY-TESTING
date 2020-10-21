@@ -129,7 +129,7 @@ const tests = [
       actions: [
         'click element [href="/contact-us"]',
         "wait for path to be /contact-us",
-        "wait for element #app > div > div.marketing-content.zIndex0 > div > div:nth-child(3) > div:nth-child(6) > div > div > button to be visible"
+        "wait for element #contact-us-form to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -147,7 +147,7 @@ const tests = [
       actions: [
         'click element [href="/help"]',
         "wait for path to be /help",
-        "wait for #app > div > div.marketing-content.zIndex0 > div > div.tabs.w-tabs > div.tabs-menu.w-tab-menu > a.tab-link-tab-1.w-inline-block.w-tab-link.w--current to be visible"
+        "wait for #help-page-content > div:nth-child(2) > div > div:nth-child(3) > h2 to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -390,6 +390,11 @@ async function runTest(test) {
   fs.writeFile("Output/anonymousUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
+  if(test.name==='Rocket Homes - Home Page 1'){
+    pa11y(test.url,test.testOptions).catch(error => {
+    return console.error(error.message);
+    });
+   }
 }
 
 async function runAndWait() {

@@ -1,5 +1,4 @@
 "use strict";
-
 const htmlReporter = require("pa11y-reporter-html");
 var csvReporter = require("pa11y-reporter-csv");
 const pa11y = require("pa11y");
@@ -373,7 +372,7 @@ const tests =[
         info: console.error.bind(console)
       }
     }
-  },
+  }
 ];
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/signedinUser/WCAG2A/" + test.name + ".png";
@@ -386,6 +385,11 @@ async function runTest(test) {
   fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
+  if(test.name==='Rocket Homes - Email Notification Page 1'){
+    pa11y(test.url,test.testOptions).catch(error => {
+    return console.error(error.message);
+    });
+   }
 }
 
 async function runAndWait() {
