@@ -104,7 +104,7 @@ const tests =[
         "wait for element #trends-main-content > section:nth-child(1) > h2 to be visible",
         "wait for element #trends-sticky-header-breadcrumb-county to be visible" 
       ],
-      timeout: 60000,
+      timeout: 90000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -375,21 +375,17 @@ const tests =[
   }
 ];
 async function runTest(test) {
-  test.testOptions.screenCapture = "./Output/signedinUser/WCAG2AA/" + test.name + ".png";
-  test.testOptions.standard = "WCAG2AA";
+  test.testOptions.screenCapture = "./Output/signedinUser/WCAG2A/" + test.name + ".png";
+  test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
 
   const htmlResults = await htmlReporter.results(results);
-  fs.writeFile("Output/signedinUser/WCAG2AA/" + test.name + ".html", htmlResults, function(err) {
+  fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
-  if(test.name==='Rocket Homes - Email Notification Page 1'){
-    pa11y(test.url,test.testOptions).catch(error => {
-    return console.error(error.message);
-    });
-   }
+
 }
 
 async function runAndWait() {
