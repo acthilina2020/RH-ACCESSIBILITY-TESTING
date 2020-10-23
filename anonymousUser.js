@@ -359,7 +359,8 @@ const tests = [
         info: console.error.bind(console)
       }
     }
-  },{
+  },
+  {
     name: "Rocket Homes - Market Reports page 22",
     url: "https://qa.rockethomes.com/real-estate-trends",
     testOptions: {
@@ -378,20 +379,17 @@ const tests = [
     }
   }
 ];
-
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/anonymousUser/WCAG2A/" + test.name + ".png";
   test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
-
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/anonymousUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }
-
 async function runAndWait() {
   try {
     for (var i = 0; i < tests.length; i++) {
@@ -401,5 +399,4 @@ async function runAndWait() {
     console.log(e);
   }
 }
-
 runAndWait();

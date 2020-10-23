@@ -380,14 +380,11 @@ async function runTest(test) {
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
-
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
-
 }
-
 async function runAndWait() {
  try {
   for (var i = 0; i < tests.length; i++) {
