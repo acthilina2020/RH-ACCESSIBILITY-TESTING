@@ -129,7 +129,7 @@ const tests = [
       actions: [
         'click element [href="/contact-us"]',
         "wait for path to be /contact-us",
-        "wait for element #app > div > div.marketing-content.zIndex0 > div > div:nth-child(3) > div:nth-child(6) > div > div > button to be visible"
+        "wait for element #contact-us-form to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -147,7 +147,7 @@ const tests = [
       actions: [
         'click element [href="/help"]',
         "wait for path to be /help",
-        "wait for #app > div > div.marketing-content.zIndex0 > div > div.tabs.w-tabs > div.tabs-menu.w-tab-menu > a.tab-link-tab-1.w-inline-block.w-tab-link.w--current to be visible"
+        "wait for #help-page-content > div:nth-child(2) > div > div:nth-child(3) > h2 to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -359,7 +359,8 @@ const tests = [
         info: console.error.bind(console)
       }
     }
-  },{
+  },
+  {
     name: "Rocket Homes - Market Reports page 22",
     url: "https://qa.rockethomes.com/real-estate-trends",
     testOptions: {
@@ -378,20 +379,17 @@ const tests = [
     }
   }
 ];
-
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/anonymousUser/WCAG2A/" + test.name + ".png";
   test.testOptions.standard = "WCAG2A";
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
-
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/anonymousUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }
-
 async function runAndWait() {
   try {
     for (var i = 0; i < tests.length; i++) {
@@ -401,5 +399,4 @@ async function runAndWait() {
     console.log(e);
   }
 }
-
 runAndWait();

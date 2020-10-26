@@ -1,5 +1,4 @@
 "use strict";
-
 const htmlReporter = require("pa11y-reporter-html");
 var csvReporter = require("pa11y-reporter-csv");
 const pa11y = require("pa11y");
@@ -105,7 +104,7 @@ const tests =[
         "wait for element #trends-main-content > section:nth-child(1) > h2 to be visible",
         "wait for element #trends-sticky-header-breadcrumb-county to be visible" 
       ],
-      timeout: 60000,
+      timeout: 90000,
       ignore: ["warning", "notice"],
       log: {
         error: console.error.bind(console),
@@ -373,7 +372,7 @@ const tests =[
         info: console.error.bind(console)
       }
     }
-  },
+  }
 ];
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/signedinUser/WCAG2A/" + test.name + ".png";
@@ -381,13 +380,11 @@ async function runTest(test) {
   const results = await pa11y(test.url, test.testOptions).catch(error => {
     return console.error(error.message);
   });
-
   const htmlResults = await htmlReporter.results(results);
   fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
 }
-
 async function runAndWait() {
  try {
   for (var i = 0; i < tests.length; i++) {
