@@ -384,6 +384,11 @@ async function runTest(test) {
   fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
+  if(test.name==='Rocket Homes - Email Notification Page 1'){
+    pa11y(test.url,test.testOptions).catch(error => {
+    return console.error(error.message);
+    });
+  }
 }
 async function runAndWait() {
  try {
