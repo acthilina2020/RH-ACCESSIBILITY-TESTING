@@ -22,10 +22,10 @@ const tests = [
   },
   {
     name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/219-brannan-st-unit-2g-san-francisco-ca-94107",
+    url: "https://qa.rockethomes.com/homes/9516-mendiburu-rd-california-city-ca-93505",
     testOptions: {
       actions: [
-        "wait for element #side-nav-listing-form-first-name-input to be visible"
+        "wait for element #listing-aside-lead-form-form to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -305,14 +305,13 @@ const tests = [
   },
   {
     name: "Rocket Homes - Off-Market Page 19",
-    url: "https://qa.rockethomes.com/homes/1082-sunset-rd-epworth-ga-30541",
+    url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
     testOptions: {
       actions: [
-        "wait for element #listing-address > div > div.dFlex.alignItemsCenter.marginB24.bgRocketBlue4.b1.bRocketBlue0.border-radius-4.paddingX16.paddingY8.paddingX24-sm.paddingY16-sm.box-shadow-1 > p to be visible",
-        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > div to be visible",
-        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > h1 to be visible",
-        "wait for element #listing-form-contact-container > div.col-2-item.flex.justify-center > div > div:nth-child(1) > div to be visible",
-        "wait for element #app > div > div > div.listing-page-content > div.container > div > div:nth-child(5) > section > h3 to be visible"
+        "wait for element #listing-page > div.w-full > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div > div:nth-child(2) to be visible",
+        "wait for element #listing-lead-form-submit to be visible",
+        "wait for element #footer-foc-links > h5 to be visible"
       ],
       timeout: 90000,
       ignore: ["warning", "notice"],
@@ -342,7 +341,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Active listing page 21",
-    url: "https://www.rockethomes.com/homes/400-nw-lakewood-blvd-lees-summit-mo-64064",
+    url: "https://www.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
     testOptions: {
       actions: [
         "wait for element #listing-address-street to be visible",
