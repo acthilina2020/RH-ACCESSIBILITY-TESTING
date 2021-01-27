@@ -308,8 +308,8 @@ const tests = [
     url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div.w-full > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
-        "wait for element #listing-page > div:nth-child(4) > div > div:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
         "wait for element #listing-lead-form-submit to be visible",
         "wait for element #footer-foc-links > h5 to be visible"
       ],
@@ -344,10 +344,10 @@ const tests = [
     url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div:nth-child(4) > div.container > div.flex-grow > h1 > span:nth-child(1) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > section:nth-child(7)  to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > section:nth-child(7)  to be visible",
         "wait for element #listing-lead-form-submit to be visible"
       ],
       timeout: 60000,
@@ -364,6 +364,7 @@ const tests = [
     url: "https://qa.rockethomes.com/real-estate-trends",
     testOptions: {
       actions: [
+        "wait for element #trend-hub > section > div:nth-child(2) > div > h1 to be visible",
         "wait for element #trend-hub-search-bar to be visible",
         "wait for element #trend-hub-featured-locations to be visible",
         "wait for element #trend-hub-faq to be visible"
