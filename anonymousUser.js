@@ -377,6 +377,25 @@ const tests = [
         info: console.error.bind(console)
       }
     }
+  },
+  {
+    name: "Rocket Homes - How Much Home Can I Afford? page 23",
+    url: "https://qa.rockethomes.com/home-affordability-calculator",
+    testOptions: {
+      actions: [
+        "wait for element #hac-location-input to be visible",
+        "wait for element #hac-annual-income-input to be visible",
+        "wait for element #hac-available-funds-input to be visible",
+        "wait for element #hac-faq-section to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
   }
 ];
 async function runTest(test) {
