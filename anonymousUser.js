@@ -22,10 +22,10 @@ const tests = [
   },
   {
     name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/219-brannan-st-unit-2g-san-francisco-ca-94107",
+    url: "https://qa.rockethomes.com/homes/9516-mendiburu-rd-california-city-ca-93505",
     testOptions: {
       actions: [
-        "wait for element #side-nav-listing-form-first-name-input to be visible"
+        "wait for element #listing-aside-lead-form-form to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -305,14 +305,13 @@ const tests = [
   },
   {
     name: "Rocket Homes - Off-Market Page 19",
-    url: "https://qa.rockethomes.com/homes/1082-sunset-rd-epworth-ga-30541",
+    url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
     testOptions: {
       actions: [
-        "wait for element #listing-address > div > div.dFlex.alignItemsCenter.marginB24.bgRocketBlue4.b1.bRocketBlue0.border-radius-4.paddingX16.paddingY8.paddingX24-sm.paddingY16-sm.box-shadow-1 > p to be visible",
-        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > div to be visible",
-        "wait for element #listing-address > div > div.col-xs-12.col-sm-9 > div.dFlex.marginB8 > h1 to be visible",
-        "wait for element #listing-form-contact-container > div.col-2-item.flex.justify-center > div > div:nth-child(1) > div to be visible",
-        "wait for element #app > div > div > div.listing-page-content > div.container > div > div:nth-child(5) > section > h3 to be visible"
+        "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
+        "wait for element #listing-lead-form-submit to be visible",
+        "wait for element #footer-foc-links > h5 to be visible"
       ],
       timeout: 90000,
       ignore: ["warning", "notice"],
@@ -342,14 +341,14 @@ const tests = [
   },
   {
     name: "Rocket Homes - Active listing page 21",
-    url: "https://www.rockethomes.com/homes/400-nw-lakewood-blvd-lees-summit-mo-64064",
+    url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
     testOptions: {
       actions: [
-        "wait for element #listing-address-street to be visible",
-        "wait for element #listing-utilities-section-list to be visible",
-        "wait for element #mortgage-calculator to be visible",
-        "wait for element #section-neighbors to be visible",
-        "wait for element #listing-form-lead-form-container to be visible"
+        "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
+        "wait for element #listing-page > div:nth-child(5) > section:nth-child(7)  to be visible",
+        "wait for element #listing-lead-form-submit to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -365,9 +364,29 @@ const tests = [
     url: "https://qa.rockethomes.com/real-estate-trends",
     testOptions: {
       actions: [
+        "wait for element #trend-hub > section > div:nth-child(2) > div > h1 to be visible",
         "wait for element #trend-hub-search-bar to be visible",
         "wait for element #trend-hub-featured-locations to be visible",
         "wait for element #trend-hub-faq to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - How Much Home Can I Afford? page 23",
+    url: "https://qa.rockethomes.com/home-affordability-calculator",
+    testOptions: {
+      actions: [
+        "wait for element #hac-location-input to be visible",
+        "wait for element #hac-annual-income-input to be visible",
+        "wait for element #hac-available-funds-input to be visible",
+        "wait for element #hac-faq-section to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -389,6 +408,11 @@ async function runTest(test) {
   fs.writeFile("Output/anonymousUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
+  if(test.name==='Rocket Homes - Home Page 1'){
+    pa11y(test.url,test.testOptions).catch(error => {
+    return console.error(error.message);
+    });
+  }
 }
 async function runAndWait() {
   try {

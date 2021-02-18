@@ -166,7 +166,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -193,7 +193,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -220,7 +220,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -247,7 +247,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -274,7 +274,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -301,7 +301,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -328,7 +328,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -355,7 +355,7 @@ const tests =[
         "click element #header-nav-sign-in",
         "wait for element #username to be visible",
         "wait for element #password to be visible",
-        "set field #username to accessibilityUser@example.com",
+        "set field #username to accessibilityUser3@example.com",
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
@@ -384,6 +384,11 @@ async function runTest(test) {
   fs.writeFile("Output/signedinUser/WCAG2A/" + test.name + ".html", htmlResults, function(err) {
     return console.error(err);
   });
+  if(test.name==='Rocket Homes - Email Notification Page 1'){
+    pa11y(test.url,test.testOptions).catch(error => {
+    return console.error(error.message);
+    });
+  }
 }
 async function runAndWait() {
  try {
