@@ -22,7 +22,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/9516-mendiburu-rd-california-city-ca-93505",
+    url: "https://qa.rockethomes.com/homes/0-poppy-california-city-ca-93504",
     testOptions: {
       actions: [
         "wait for element #listing-aside-lead-form-form to be visible"
@@ -91,8 +91,16 @@ const tests = [
     testOptions: {
       actions: [
         "wait for path to be /sell",
-        "wait for #sell-page > div to be visible",
-        "wait for #sell-page-lead-form-sell-address-input to be visible"
+        "wait for #sell-page-hero-card to be visible",
+        "wait for #sell-hero-cta to be visible",
+        "wait for #sell-page-intro to be visible",
+        "wait for #sell-page-how-it-works-agent to be visible",
+        "wait for #sell-page-how-it-works to be visible",
+        "wait for #sell-page-how-it-works-agent to be visible",
+        "wait for #sell-page-how-it-works-owner to be visible",
+        "wait for #contact-section-phone to be visible",
+        "wait for #sell-page-lead-form-sell-address-input to be visible",
+        "wait for #sell-page-buying-section-cta to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -272,7 +280,7 @@ const tests = [
       "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
       "wait for element #property-report-comparable-homes > h3 to be visible",
       "wait for element #property-report-comparable-homes-toggle-sold to be visible",
-      "wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      //"wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
       "wait for element #property-report-main-content > section:nth-child(6) > h2 to be visible",
       "wait for element #property-report-blog-links > div.flex.justify-between.items-center.mb-16 > h2 to be visible",
       "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
@@ -311,7 +319,7 @@ const tests = [
         "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
         "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
         "wait for element #listing-lead-form-submit to be visible",
-        "wait for element #footer-foc-links > h5 to be visible"
+        //"wait for element #footer-foc-links > h5 to be visible"
       ],
       timeout: 90000,
       ignore: ["warning", "notice"],
@@ -345,9 +353,9 @@ const tests = [
     testOptions: {
       actions: [
         "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
-        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
-        "wait for element #listing-page > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
-        "wait for element #listing-page > div:nth-child(5) > section:nth-child(7)  to be visible",
+        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
+        "wait for element #listing-page > div:nth-child(6) > section:nth-child(7)  to be visible",
         "wait for element #listing-lead-form-submit to be visible"
       ],
       timeout: 60000,
