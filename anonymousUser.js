@@ -280,7 +280,7 @@ const tests = [
       "wait for element #home-valuation > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
       "wait for element #property-report-comparable-homes > h3 to be visible",
       "wait for element #property-report-comparable-homes-toggle-sold to be visible",
-      //"wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
+      "wait for element #trends-for-similar-homes-card > div > div.flex.justify-between.border-b.border-gray.items-start > h3 to be visible",
       "wait for element #property-report-main-content > section:nth-child(6) > h2 to be visible",
       "wait for element #property-report-blog-links > div.flex.justify-between.items-center.mb-16 > h2 to be visible",
       "wait for element #trends-mls-disclaimers > p.p1.mb-8 to be visible"
@@ -319,7 +319,7 @@ const tests = [
         "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
         "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
         "wait for element #listing-lead-form-submit to be visible",
-        //"wait for element #footer-foc-links > h5 to be visible"
+        "wait for element #footer-foc-links > h5 to be visible"
       ],
       timeout: 90000,
       ignore: ["warning", "notice"],
