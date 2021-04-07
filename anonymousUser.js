@@ -6,20 +6,20 @@ const pa11y = require("pa11y");
 const fs = require("file-system");
 
 const tests = [
-  // {
-  //   name: "Rocket Homes - Home Page 1",
-  //   url: "https://qa.rockethomes.com",
-  //   testOptions: {
-  //     actions: ["wait for element #header-nav-sign-up to be visible"],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
+  {
+    name: "Rocket Homes - Home Page 1",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: ["wait for element #header-nav-sign-up to be visible"],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
   {
     name: "Rocket Homes - Listing Page 2",
     url: "https://qa.rockethomes.com/homes/9708-sally-ave-california-city-ca-93505",
@@ -173,7 +173,7 @@ const tests = [
       actions: [
         'click element [href="/press-room"]',
         "wait for path to be /press-room",
-        "wait for element #press-room-content > div.bg-background.md\:px-16 > div > button:nth-child(2) to be visible"
+        "wait for element #press-room-content > div:nth-child(1) > div.container > button:nth-child(2) to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -294,117 +294,117 @@ const tests = [
       }
     }
   },
-  // {
-  //   name: "Rocket Homes - Homes For Sale 18",
-  //   url: "https://qa.rockethomes.com/houses-for-sale",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for path to be /houses-for-sale",
-  //       "wait for #housesforsale-searchbar to be visible"
-  //     ],
-  //     timeout: 70000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
-  // {
-  //   name: "Rocket Homes - Off-Market Page 19",
-  //   url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
-  //       "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
-  //       "wait for element #listing-lead-form-submit to be visible",
-  //       "wait for element #footer-foc-links > h5 to be visible"
-  //     ],
-  //     timeout: 90000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
-  // {
-  //   name: "Rocket HQ - Credit Finance Guide page 20",
-  //   url: "https://www.rockethq.com/learn/credit",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for url to be https://www.rockethq.com/learn/credit",
-  //       "wait for element body > main > div:nth-child(1) > div > h1 to be visible"
-  //     ],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
-  // {
-  //   name: "Rocket Homes - Active listing page 21",
-  //   url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
-  //       "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
-  //       "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
-  //       "wait for element #listing-page > div:nth-child(6) > section:nth-child(7)  to be visible",
-  //       "wait for element #listing-lead-form-submit to be visible"
-  //     ],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
-  // {
-  //   name: "Rocket Homes - Market Reports page 22",
-  //   url: "https://qa.rockethomes.com/real-estate-trends",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for element #trend-hub > section > div:nth-child(2) > div > h1 to be visible",
-  //       "wait for element #trend-hub-search-bar to be visible",
-  //       "wait for element #trend-hub-featured-locations to be visible",
-  //       "wait for element #trend-hub-faq to be visible"
-  //     ],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
-  // {
-  //   name: "Rocket Homes - How Much Home Can I Afford? page 23",
-  //   url: "https://qa.rockethomes.com/home-affordability-calculator",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for element #hac-location-input to be visible",
-  //       "wait for element #hac-annual-income-input to be visible",
-  //       "wait for element #hac-available-funds-input to be visible",
-  //       "wait for element #hac-faq-section to be visible"
-  //     ],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // }
+  {
+    name: "Rocket Homes - Homes For Sale 18",
+    url: "https://qa.rockethomes.com/houses-for-sale",
+    testOptions: {
+      actions: [
+        "wait for path to be /houses-for-sale",
+        "wait for #housesforsale-searchbar to be visible"
+      ],
+      timeout: 70000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Off-Market Page 19",
+    url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
+    testOptions: {
+      actions: [
+        "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
+        "wait for element #listing-lead-form-submit to be visible",
+        "wait for element #footer-foc-links > h5 to be visible"
+      ],
+      timeout: 90000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket HQ - Credit Finance Guide page 20",
+    url: "https://www.rockethq.com/learn/credit",
+    testOptions: {
+      actions: [
+        "wait for url to be https://www.rockethq.com/learn/credit",
+        "wait for element body > main > div:nth-child(1) > div > h1 to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Active listing page 21",
+    url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
+    testOptions: {
+      actions: [
+        "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
+        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
+        "wait for element #listing-page > div:nth-child(6) > section:nth-child(7) to be visible",
+        "wait for element #listing-lead-form-submit to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - Market Reports page 22",
+    url: "https://qa.rockethomes.com/real-estate-trends",
+    testOptions: {
+      actions: [
+        "wait for element #trend-hub > section > div:nth-child(2) > div > h1 to be visible",
+        "wait for element #trend-hub-search-bar to be visible",
+        "wait for element #trend-hub-featured-locations to be visible",
+        "wait for element #trend-hub-faq to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
+  {
+    name: "Rocket Homes - How Much Home Can I Afford? page 23",
+    url: "https://qa.rockethomes.com/home-affordability-calculator",
+    testOptions: {
+      actions: [
+        "wait for element #hac-location-input to be visible",
+        "wait for element #hac-annual-income-input to be visible",
+        "wait for element #hac-available-funds-input to be visible",
+        "wait for element #hac-faq-section to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  }
 ];
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/anonymousUser/WCAG2A/" + test.name + ".png";
