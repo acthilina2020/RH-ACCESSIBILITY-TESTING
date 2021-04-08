@@ -85,32 +85,32 @@ const tests = [
       }
     }
   },
-  {
-    name: "Rocket Homes - Sell Page 6",
-    url: "https://qa.rockethomes.com/sell",
-    testOptions: {
-      actions: [
-        "wait for path to be /sell",
-        "wait for #sell-page-hero-card to be visible",
-        "wait for #sell-hero-cta to be visible",
-        "wait for #sell-page-intro to be visible",
-        "wait for #sell-page-how-it-works-agent to be visible",
-        "wait for #sell-page-how-it-works to be visible",
-        "wait for #sell-page-how-it-works-agent to be visible",
-        "wait for #sell-page-how-it-works-owner to be visible",
-        "wait for #contact-section-phone to be visible",
-        "wait for #sell-page-lead-form-sell-address-input to be visible",
-        "wait for #sell-page-buying-section-cta to be visible"
-      ],
-      timeout: 60000,
-      ignore: ["warning", "notice"],
-      log: {
-        error: console.error.bind(console),
-        debug: console.error.bind(console),
-        info: console.error.bind(console)
-      }
-    }
-  },
+  // {
+  //   name: "Rocket Homes - Sell Page 6",
+  //   url: "https://qa.rockethomes.com/sell",
+  //   testOptions: {
+  //     actions: [
+  //       "wait for path to be /sell",
+  //       "wait for #sell-page-hero-card to be visible",
+  //       "wait for #sell-hero-cta to be visible",
+  //       "wait for #sell-page-intro to be visible",
+  //       "wait for #sell-page-how-it-works-agent to be visible",
+  //       "wait for #sell-page-how-it-works to be visible",
+  //       "wait for #sell-page-how-it-works-agent to be visible",
+  //       "wait for #sell-page-how-it-works-owner to be visible",
+  //       "wait for #contact-section-phone to be visible",
+  //       "wait for #sell-page-lead-form-sell-address-input to be visible",
+  //       "wait for #sell-page-buying-section-cta to be visible"
+  //     ],
+  //     timeout: 60000,
+  //     ignore: ["warning", "notice"],
+  //     log: {
+  //       error: console.error.bind(console),
+  //       debug: console.error.bind(console),
+  //       info: console.error.bind(console)
+  //     }
+  //   }
+  // },
   {
     name: "Rocket Homes - AboutUs Page 7",
     url: "https://qa.rockethomes.com",
@@ -331,11 +331,11 @@ const tests = [
     }
   },
   {
-    name: "Rocket HQ - Credit Finance Guide page 20",
-    url: "https://www.rockethq.com/learn/credit",
+    name: "Rocket Homes - Credit Guide page 20",
+    url: "https://qa.rockethomes.com/credit-guide",
     testOptions: {
       actions: [
-        "wait for url to be https://www.rockethq.com/learn/credit",
+        "wait for url to be https://qa.rockethomes.com/credit-guide",
         "wait for element body > main > div:nth-child(1) > div > h1 to be visible"
       ],
       timeout: 60000,
@@ -392,8 +392,19 @@ const tests = [
     testOptions: {
       actions: [
         "wait for element #hac-location-input to be visible",
+        "set field #hac-location-input to Detroit, MI",
         "wait for element #hac-annual-income-input to be visible",
+        "set field #hac-annual-income-input to 120000",
         "wait for element #hac-available-funds-input to be visible",
+        "set field #hac-available-funds-input to 70000",
+        "wait for element #hac-monthly-debt-input to be visible",
+        "set field #hac-monthly-debt-input to 1000",
+        "wait for element #hac-monthly-expenses-input to be visible",
+        "set field #hac-monthly-expenses-input to 2000",
+        "wait for element #hac-landing-form-submit-button to be visible",
+        "click element #hac-landing-form-submit-button",
+        "navigate to https://qa.rockethomes.com/home-affordability-calculator/results?location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit%2C+MI&annual_income=120000&available_funds=70000&monthly_debt=1000&monthly_expenses=2000&credit_score=660",
+        "wait for element #hac-results-estimate > div.relative > div > a to be visible",
         "wait for element #hac-faq-section to be visible"
       ],
       timeout: 60000,

@@ -372,7 +372,40 @@ const tests =[
         info: console.error.bind(console)
       }
     }
+  },
+  {
+    name: "Rocket Homes - HAC results page 14",
+    url: "https://qa.rockethomes.com",
+    testOptions: {
+      actions: [
+        "wait for element #header-nav-sign-in to be visible",
+        "click element #header-nav-sign-in",
+        "wait for element #username to be visible",
+        "wait for element #password to be visible",
+        "set field #username to accessibilityUser1.vnge9rdx@mailosaur.io",
+        "set field #password to Qup1234!",
+        "wait for element #sign-in-submit > button to be visible",
+        "click element #sign-in-submit > button",
+        "wait for element #header-nav-account-toggle to be visible",
+        "navigate to https://qa.rockethomes.com/home-affordability-calculator/results?annual_income=120000&monthly_debt=1000&monthly_expenses=2000&available_funds=70000&debt_to_income=36&credit_score=660&location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit,%20MI",
+        "wait for element #hac-results-estimate to be visible",
+        "wait for element #hac-results-sticky-aside to be visible",
+        "wait for element #hac-results-sticky-aside-last-name-input-label to be visible",
+        "wait for element #hac-results-sticky-aside-submit to be visible",
+        "wait for element #hac-results-available-listings to be visible",
+        "wait for element #mortgage-preapproval-cta-button to be visible",
+        "wait for element #hac-affordability-guides-section to be visible",
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
   }
+
 ];
 async function runTest(test) {
   test.testOptions.screenCapture = "./Output/signedinUser/WCAG2A/" + test.name + ".png";
