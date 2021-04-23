@@ -386,6 +386,7 @@ const tests =[
         "set field #password to Qup1234!",
         "wait for element #sign-in-submit > button to be visible",
         "click element #sign-in-submit > button",
+        "wait for element #header-nav-link-searches to be visible",
         "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/home-affordability-calculator/results?annual_income=120000&monthly_debt=1000&monthly_expenses=2000&available_funds=70000&debt_to_income=36&credit_score=660&location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit,%20MI",
         "wait for element #hac-results-estimate to be visible",

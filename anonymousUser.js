@@ -21,8 +21,8 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/6761-california-city-blvd-california-city-ca-93505",
+    name: "Rocket Homes - Listing Page contains state name in as city 2",
+    url: "https://qa.rockethomes.com/homes/michigan-trl-kewadin-mi-49648",
     testOptions: {
       actions: [
         "wait for element #listing-aside-lead-form-form to be visible"
@@ -351,7 +351,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Active listing page 21",
-    url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
+    url: "https://qa.rockethomes.com/homes/1141-s-shore-dr-lake-waukomis-mo-64151",
     testOptions: {
       actions: [
         "wait for element #listing-overview-section to be visible",
@@ -399,6 +399,8 @@ const tests = [
       actions: [
         "wait for element #hac-location-input to be visible",
         "set field #hac-location-input to Detroit, MI",
+        " wait for element to be #react-autowhatever-1--item-0 visible",
+        "clcik element #react-autowhatever-1--item-0",
         "wait for element #hac-annual-income-input to be visible",
         "set field #hac-annual-income-input to 120000",
         "wait for element #hac-available-funds-input to be visible",
@@ -409,8 +411,8 @@ const tests = [
         "set field #hac-monthly-expenses-input to 2000",
         "wait for element #hac-landing-form-submit-button to be visible",
         "click element #hac-landing-form-submit-button",
-        "navigate to https://qa.rockethomes.com/home-affordability-calculator/results?location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit%2C+MI&annual_income=120000&available_funds=70000&monthly_debt=1000&monthly_expenses=2000&credit_score=660",
-        "wait for element #hac-results-estimate > div.relative > div > a to be visible",
+        "wait for url to be https://qa.rockethomes.com/home-affordability-calculator/results?location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit%2C+MI&annual_income=120000&available_funds=70000&monthly_debt=1000&monthly_expenses=2000&credit_score=660",
+        "wait for element #hac-results-estimate > div.relative > div > h1  to be visible",
         "wait for element #hac-faq-section to be visible"
       ],
       timeout: 60000,
