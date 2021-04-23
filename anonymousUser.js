@@ -21,8 +21,8 @@ const tests = [
     }
   },
   {
-    name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/0-poppy-california-city-ca-93504",
+    name: "Rocket Homes - Listing Page contains state name in as city 2",
+    url: "https://qa.rockethomes.com/homes/michigan-trl-kewadin-mi-49648",
     testOptions: {
       actions: [
         "wait for element #listing-aside-lead-form-form to be visible"
@@ -93,11 +93,13 @@ const tests = [
         "wait for path to be /sell",
         "wait for #sell-page-hero-card to be visible",
         "wait for #sell-hero-cta to be visible",
-        "wait for #sell-page-intro to be visible",
-        "wait for #sell-page-how-it-works-agent to be visible",
-        "wait for #sell-page-how-it-works to be visible",
-        "wait for #sell-page-how-it-works-agent to be visible",
-        "wait for #sell-page-how-it-works-owner to be visible",
+        "wait for #sell-page-hero-link to be visible",
+        "wait for #sell-page-explore-options-toggle-show-agent to be visible",
+        "wait for #sell-page-explore-options-toggle-show-owner to be visible",
+        "wait for #sell-page-how-it-works-toggle-show-agent to be visible",
+        "wait for #sell-page-how-it-works-toggle-show-owner to be visible",
+        "wait for #sell-page-faqs-toggle-show-agent to be visible",
+        "wait for #sell-page-faqs-toggle-show-owner to be visible",
         "wait for #contact-section-phone to be visible",
         "wait for #sell-page-lead-form-sell-address-input to be visible",
         "wait for #sell-page-buying-section-cta to be visible"
@@ -173,7 +175,7 @@ const tests = [
       actions: [
         'click element [href="/press-room"]',
         "wait for path to be /press-room",
-        "wait for element #app > div > div.marketing-content.zIndex0 > div > div.tabs.w-tabs > div.tabs-menu.w-tab-menu > a.tab-link-tab-2.w-inline-block.w-tab-link to be visible"
+        "wait for element #press-room-content > div:nth-child(1) > div.container > button:nth-child(2) to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
@@ -316,8 +318,8 @@ const tests = [
     url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
-        "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(2) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(2) > div > div > div > div:nth-child(2) to be visible",
         "wait for element #listing-lead-form-submit to be visible",
         "wait for element #footer-foc-links > h5 to be visible"
       ],
@@ -331,11 +333,11 @@ const tests = [
     }
   },
   {
-    name: "Rocket HQ - Credit Finance Guide page 20",
-    url: "https://www.rockethq.com/learn/credit",
+    name: "Rocket Homes - Credit Guide page 20",
+    url: "https://qa.rockethomes.com/credit-guide",
     testOptions: {
       actions: [
-        "wait for url to be https://www.rockethq.com/learn/credit",
+        "wait for url to be https://qa.rockethomes.com/credit-guide",
         "wait for element body > main > div:nth-child(1) > div > h1 to be visible"
       ],
       timeout: 60000,
@@ -349,13 +351,17 @@ const tests = [
   },
   {
     name: "Rocket Homes - Active listing page 21",
-    url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
+    url: "https://qa.rockethomes.com/homes/1141-s-shore-dr-lake-waukomis-mo-64151",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > section:nth-child(7)  to be visible",
+        "wait for element #listing-overview-section to be visible",
+        "wait for element #listing-trend-report-card-cta to be visible",
+        "wait for element #listing-mls-details-facts-and-features to be visible",
+        "wait for element #listing-mls-details-description to be visible",
+        "wait for element #listing-mls-details-interior-features to be visible",
+        "wait for element #listing-mls-details-interior-features to be visible",
+        "wait for element #listing-mls-details-other to be visible",
+        "wait for element #listing-neighbors-like-section to be visible",
         "wait for element #listing-lead-form-submit to be visible"
       ],
       timeout: 60000,
@@ -392,8 +398,21 @@ const tests = [
     testOptions: {
       actions: [
         "wait for element #hac-location-input to be visible",
+        "set field #hac-location-input to Detroit, MI",
+        " wait for element to be #react-autowhatever-1--item-0 visible",
+        "clcik element #react-autowhatever-1--item-0",
         "wait for element #hac-annual-income-input to be visible",
+        "set field #hac-annual-income-input to 120000",
         "wait for element #hac-available-funds-input to be visible",
+        "set field #hac-available-funds-input to 70000",
+        "wait for element #hac-monthly-debt-input to be visible",
+        "set field #hac-monthly-debt-input to 1000",
+        "wait for element #hac-monthly-expenses-input to be visible",
+        "set field #hac-monthly-expenses-input to 2000",
+        "wait for element #hac-landing-form-submit-button to be visible",
+        "click element #hac-landing-form-submit-button",
+        "wait for url to be https://qa.rockethomes.com/home-affordability-calculator/results?location_id=place_ce0d208dc58d0c5f2af39915b1228516&location_description=Detroit%2C+MI&annual_income=120000&available_funds=70000&monthly_debt=1000&monthly_expenses=2000&credit_score=660",
+        "wait for element #hac-results-estimate > div.relative > div > h1  to be visible",
         "wait for element #hac-faq-section to be visible"
       ],
       timeout: 60000,
