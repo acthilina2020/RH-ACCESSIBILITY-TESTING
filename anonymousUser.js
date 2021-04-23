@@ -22,7 +22,7 @@ const tests = [
   },
   {
     name: "Rocket Homes - Listing Page 2",
-    url: "https://qa.rockethomes.com/homes/9708-sally-ave-california-city-ca-93505",
+    url: "https://qa.rockethomes.com/homes/6761-california-city-blvd-california-city-ca-93505",
     testOptions: {
       actions: [
         "wait for element #listing-aside-lead-form-form to be visible"
@@ -85,32 +85,34 @@ const tests = [
       }
     }
   },
-  // {
-  //   name: "Rocket Homes - Sell Page 6",
-  //   url: "https://qa.rockethomes.com/sell",
-  //   testOptions: {
-  //     actions: [
-  //       "wait for path to be /sell",
-  //       "wait for #sell-page-hero-card to be visible",
-  //       "wait for #sell-hero-cta to be visible",
-  //       "wait for #sell-page-intro to be visible",
-  //       "wait for #sell-page-how-it-works-agent to be visible",
-  //       "wait for #sell-page-how-it-works to be visible",
-  //       "wait for #sell-page-how-it-works-agent to be visible",
-  //       "wait for #sell-page-how-it-works-owner to be visible",
-  //       "wait for #contact-section-phone to be visible",
-  //       "wait for #sell-page-lead-form-sell-address-input to be visible",
-  //       "wait for #sell-page-buying-section-cta to be visible"
-  //     ],
-  //     timeout: 60000,
-  //     ignore: ["warning", "notice"],
-  //     log: {
-  //       error: console.error.bind(console),
-  //       debug: console.error.bind(console),
-  //       info: console.error.bind(console)
-  //     }
-  //   }
-  // },
+  {
+    name: "Rocket Homes - Sell Page 6",
+    url: "https://qa.rockethomes.com/sell",
+    testOptions: {
+      actions: [
+        "wait for path to be /sell",
+        "wait for #sell-page-hero-card to be visible",
+        "wait for #sell-hero-cta to be visible",
+        "wait for #sell-page-hero-link to be visible",
+        "wait for #sell-page-explore-options-toggle-show-agent to be visible",
+        "wait for #sell-page-explore-options-toggle-show-owner to be visible",
+        "wait for #sell-page-how-it-works-toggle-show-agent to be visible",
+        "wait for #sell-page-how-it-works-toggle-show-owner to be visible",
+        "wait for #sell-page-faqs-toggle-show-agent to be visible",
+        "wait for #sell-page-faqs-toggle-show-owner to be visible",
+        "wait for #contact-section-phone to be visible",
+        "wait for #sell-page-lead-form-sell-address-input to be visible",
+        "wait for #sell-page-buying-section-cta to be visible"
+      ],
+      timeout: 60000,
+      ignore: ["warning", "notice"],
+      log: {
+        error: console.error.bind(console),
+        debug: console.error.bind(console),
+        info: console.error.bind(console)
+      }
+    }
+  },
   {
     name: "Rocket Homes - AboutUs Page 7",
     url: "https://qa.rockethomes.com",
@@ -316,8 +318,8 @@ const tests = [
     url: "https://qa.rockethomes.com/homes/93-merrimac-pointe-mc-caysville-ga-30555",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div:nth-child(4) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
-        "wait for element #listing-page > div:nth-child(4) > div > div > div > div:nth-child(2) to be visible",
+        "wait for element #listing-page > div:nth-child(2) > div > div > div.w-full.rounded-8.p-16.mt-24.bg-no-repeat.mb-16 to be visible",
+        "wait for element #listing-page > div:nth-child(2) > div > div > div > div:nth-child(2) to be visible",
         "wait for element #listing-lead-form-submit to be visible",
         "wait for element #footer-foc-links > h5 to be visible"
       ],
@@ -352,10 +354,14 @@ const tests = [
     url: "https://qa.rockethomes.com/homes/24808-ne-colbern-rd-lees-summit-mo-64086",
     testOptions: {
       actions: [
-        "wait for element #listing-page > div:nth-child(4) > div:nth-child(1) > div.container > div:nth-child(1) > h1 > span:nth-child(1) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(5) > h2 > span:nth-child(2) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) to be visible",
-        "wait for element #listing-page > div:nth-child(6) > section:nth-child(7) to be visible",
+        "wait for element #listing-overview-section to be visible",
+        "wait for element #listing-trend-report-card-cta to be visible",
+        "wait for element #listing-mls-details-facts-and-features to be visible",
+        "wait for element #listing-mls-details-description to be visible",
+        "wait for element #listing-mls-details-interior-features to be visible",
+        "wait for element #listing-mls-details-interior-features to be visible",
+        "wait for element #listing-mls-details-other to be visible",
+        "wait for element #listing-neighbors-like-section to be visible",
         "wait for element #listing-lead-form-submit to be visible"
       ],
       timeout: 60000,

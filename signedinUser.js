@@ -20,7 +20,7 @@ const tests =[
         "wait for element #header-nav-account-toggle to be visible",
         "navigate to https://qa.rockethomes.com/notifications",
         "wait for element #email-notifications > h1 to be visible",
-        //"wait for element #footer-foc-links to be visible"
+        "wait for element #footer-foc-links to be visible"
       ],
       timeout: 60000,
       ignore: ["warning", "notice"],
